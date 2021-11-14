@@ -6,26 +6,12 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 18:05:50 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/10/14 19:53:28 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/14 01:29:20 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	ft_isalpha(int character)
+int	ft_isalpha(int c)
 {
-	if (('A' <= character && character <= 'Z') || \
-	('a' <= character && character <= 'z'))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	main(int argc, char *argv[])
-{
-	printf("%d\n", ft_isalpha(*argv[1]));
-	printf("%d\n", isalpha(*argv[1]));
-	printf("%d\n", argc);
-	return (0);
+	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
 }
