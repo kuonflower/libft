@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: ktanigaw </var/mail/ktanigaw>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 20:42:47 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/14 14:40:45 by ktanigaw         ###   ########.fr       */
+/*   Created: 2021/11/15 09:15:40 by ktanigaw          #+#    #+#             */
+/*   Updated: 2021/11/15 09:45:30 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	ft_memset(s, 0, n);
+	char		*str;
+	size_t		slen;
+
+	slen = ft_strlen(s);
+	str = (char *)s;
+	while (islen >= 0)
+	{
+		if (str[slen] == c)
+			return (str + slen);
+		slen--;
+	}
+	return (NULL);
 }
