@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 10:08:30 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/15 12:36:44 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/20 11:38:03 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_ t	i;
+	size_t	i;
 
 	i = 0;
 	while ((s1[i] || s2[i]) && i < n)
