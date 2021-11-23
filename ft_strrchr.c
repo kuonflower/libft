@@ -6,7 +6,7 @@
 /*   By: ktanigaw </var/mail/ktanigaw>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 09:15:40 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/20 11:39:03 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/21 17:55:23 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char		*str;
-	size_t		slen;
+	char	*str;
+	int		slen;
 
 	slen = ft_strlen(s);
 	str = (char *)s;
 	while (slen >= 0)
 	{
-		if (str[slen] == c)
+		if ((unsigned char) str[slen] == (unsigned char) c)
 			return (str + slen);
 		slen--;
 	}

@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:30:41 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/20 11:37:33 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/23 09:00:35 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,15 @@ int	ft_atoi(const char *str)
 	if (*src == '+' || *src == '-')
 		src++;
 	an = 0;
-	while (ft_isdigit(*str))
+	while (ft_isdigit(*src))
 	{
-		num = *src - '0';
+		num = (*src - '0');
 		if ((922337203685477580 <= an && 7 < num) || 922337203685477581 <= an)
 			return (-1);
 		if ((an <= -922337203685477580 && 8 < num) || an <= -922337203685477581)
 			return (0);
 		an = an * 10 + neg * num;
+		src++;
 	}
 	return (an);
 }

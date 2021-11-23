@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 13:32:04 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/21 20:16:07 by ktanigaw         ###   ########.fr       */
+/*   Created: 2021/11/22 20:56:16 by ktanigaw          #+#    #+#             */
+/*   Updated: 2021/11/23 10:17:57 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
+	char			*newstr;
+	unsigned int	i;
+	unsigned int	j;
 
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
+	newstr = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!newstr)
+		(NULL);
 	i = 0;
-	j = 0;
-	if (needle[0] == '\0')
-		return ((char *)haystack);
-	while (haystack[i] && i < len)
+	while (*s1)
 	{
-		if (haystack[i] == needle[j])
-		{
-			while (haystack[i + j] && needle[j] && i + j < len)
-			{
-				if (haystack[i + j] != needle[j])
-					break ;
-				j++;
-			}
-			if (needle[j] == '\0')
-				return ((char *) &haystack[i]);
-			j = 0;
-		}
-		i++;
+		newstr[i++] = *s1++;
 	}
-	return (NULL);
+	j = 0;
+	while (*s2)
+	{
+		newstr[i + j++] = *s2++;
+	}
+	newstr[i + j] = '\0';
+	return (newstr);
 }

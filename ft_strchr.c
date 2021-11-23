@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:03:49 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/20 11:33:23 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/21 17:41:58 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if ((unsigned char) s[i] == (unsigned char) c)
 			return ((char *)(s + i));
 	}
-	if (s[i] == c)
+	if ((unsigned char) s[i] == (unsigned char) c)
 		return ((char *)(s + i));
 	return (NULL);
 }
