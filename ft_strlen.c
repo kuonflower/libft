@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 02:05:19 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/14 05:50:37 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:22:24 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	count;
-
+	size_t	count;
+	
 	count = 0;
 	while (*s != '\0')
 	{

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 19:58:11 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/24 17:12:01 by ktanigaw         ###   ########.fr       */
+/*   Created: 2021/11/24 15:33:28 by ktanigaw          #+#    #+#             */
+/*   Updated: 2021/11/24 15:43:46 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	return ('0' <= c && c <= '9');
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

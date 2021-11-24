@@ -6,13 +6,12 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 02:37:58 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/14 14:28:37 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:52:07 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dstlen;

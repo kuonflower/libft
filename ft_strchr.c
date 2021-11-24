@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:03:49 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/21 17:41:58 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:06:33 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
