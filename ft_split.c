@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:05:30 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/24 10:33:12 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/26 03:40:43 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ static char	**cut_src(char const *s, char c, char **ans)
 		{
 			ans[i] = ft_substr(s, 0, len);
 			if (ans[i++] == NULL)
+			{
 				ans = free_ans_memory(ans);
+				return (NULL);
+			}
 		}
 		s += len + (s[len] != '\0');
 	}
