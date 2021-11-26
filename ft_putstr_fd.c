@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 12:49:22 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/24 12:56:49 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/27 01:16:03 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if(!s)
+		return ;
 	write(fd, s, ft_strlen(s));
 }

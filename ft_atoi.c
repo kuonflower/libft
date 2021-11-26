@@ -6,37 +6,44 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:30:41 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/24 18:36:59 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/26 18:34:34 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	overflow_return(int sign_plus_minus)
+{
+	if (sign_plus_minus == 1)
+		return (-1);
+	else if (sign_plus_minus == -1)
+		return (0);
+	else
+		return (-1);
+}
+
 int	ft_atoi(const char *str)
 {
 	char		*src;
-	int			neg;
-	int			num;
-	long long	an;
+	int			sign_plus_minus;
+	long long	anser;
 
 	src = (char *)str;
 	while (('\t' <= *src && *src <= '\r') || *src == ' ')
 		src++;
-	neg = 1;
+	sign_plus_minus = 1;
 	if (*src == '-')
-		neg = -1;
+		sign_plus_minus = -1;
 	if (*src == '+' || *src == '-')
 		src++;
-	an = 0;
+	anser = 0;
 	while (ft_isdigit(*src))
 	{
-		num = (*src - '0');
-		if ((922337203685477580 <= an && 7 < num) || 922337203685477581 <= an)
-			return (-1);
-		if ((an <= -922337203685477580 && 8 < num) || an <= -922337203685477581)
-			return (0);
-		an = an * 10 + neg * num;
-		src++;
+		if ((anser * 10) / 10 != anser)
+			return (overflow_return(sign_plus_minus));
+		anser = anser * 10 + sign_plus_minus * (*src++ - '0');
+		if (sign_plus_minus * anser < 0)
+			return (overflow_return(sign_plus_minus));
 	}
-	return (an);
+	return ((int)anser);
 }

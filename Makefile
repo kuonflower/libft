@@ -6,11 +6,12 @@
 #    By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/20 10:18:26 by ktanigaw          #+#    #+#              #
-#    Updated: 2021/11/26 14:42:12 by ktanigaw         ###   ########.fr        #
+#    Updated: 2021/11/27 00:48:37 by ktanigaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+BONUS_EXIST_FLG = .bonus_exist_flg
 CC = gcc
 INCLUDE = -I./
 CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
@@ -50,7 +51,18 @@ SRCS = ft_atoi.c\
  ft_tolower.c\
  ft_toupper.c
 
-OBJS = $(SRCS:%.c=%.o)
+BONUSES = ft_lstadd_back.c\
+ ft_lstadd_front.c\
+ ft_lstclear.c\
+ ft_lstdelone.c\
+ ft_lstiter.c\
+ ft_lstlast.c\
+ ft_lstmap.c\
+ ft_lstnew.c\
+ ft_lstsize.c
+
+SRCS_OBJS = $(SRCS:%.c=%.o)
+BONUSES_OBJS =$(BONUSES:%.c=%.o)
 
 .PHONY: all clean fclean re bonus
 
@@ -59,11 +71,17 @@ all: $(NAME)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(SRCS_OBJS)
+	ar rc $(NAME) $(SRCS_OBJS)
+
+bonus: $(BONUS_EXIST_FLG)
+
+$(BONUS_EXIST_FLG) :$(SRCS_OBJS) $(BONUSES_OBJS)
+	@touch $(BONUS_EXIST_FLG)
+	ar rc $(NAME) $(SRCS_OBJS) $(BONUSES_OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(SRCS_OBJS) $(BONUSES_OBJS) $(BONUS_EXIST_FLG)
 
 fclean: clean
 	rm -f $(NAME)

@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:29:34 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/22 20:57:24 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/27 01:39:10 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*str;
-	unsigned int	i;
+	char	*str;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
@@ -34,3 +34,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
+
+ #include <stdio.h>
+ int        main(void) 
+ {
+     char str[] = "0123456";
+     printf("3456: %s\n", ft_substr(str, 3, 4));
+     printf("01234: %s\n", ft_substr(str, 0, 5));
+     printf("none: %s\n", ft_substr(str, 9, 4));
+     printf("6: %s\n", ft_substr(str, 6, 10));
+     printf("none:%s\n", ft_substr("", 5, 0));
+     printf("none: %s\n", ft_substr(str, 0, 0));
+     printf("%s\n", ft_substr(NULL, 3, 0));
+     printf("%s\n\n",str);
+     char * s = ft_substr("tripouille", 0, 42000);
+
+     printf("ft: %d\n",strcmp(s, "tripouille"));
+     printf("ft: %s : %lu",s, strlen("tripouille") + 1);
+
+     return (0);
+ }

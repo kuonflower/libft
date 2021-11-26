@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:32:31 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/23 12:04:54 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/26 23:33:18 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int			start;
-	int			set_chars[260];
-	size_t		i;
-	int			len;
+	size_t	start;
+	int		set_chars[260];
+	size_t	i;
+	size_t	len;
 
 	if (!s1)
 		return (NULL);
