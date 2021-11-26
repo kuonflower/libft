@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:56:16 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/23 10:17:57 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/26 13:07:44 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*newstr;
-	unsigned int	i;
-	unsigned int	j;
+	char	*newstr;
+	size_t	i;
+	size_t	j;
 
 	if (!s1 && !s2)
 		return (ft_strdup(""));
