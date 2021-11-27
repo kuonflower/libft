@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:05:30 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/26 22:39:58 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/27 13:14:27 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static size_t	split_quantity(const char *s, char c)
 	count = 0;
 	while (*s)
 	{
-		if (*s++ != c && (*s == c || *s == '0'))
+		if (*s++ != c && (*s == c || *s == '\0'))
 			count++;
 	}
 	return (count);
