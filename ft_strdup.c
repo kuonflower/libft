@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 07:57:16 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/23 09:13:03 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/29 19:38:50 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,13 @@ char	*ft_strdup(const char *s1)
 	str[i] = '\0';
 	return ((char *)str);
 }
+/*
+#include <string.h>
+#include <stdio.h>
+
+int main()
+{
+//	printf("original:%s\n", strdup(NULL));
+//	printf("ft:%s\n", ft_strdup(NULL));
+	return (0);
+}*/
