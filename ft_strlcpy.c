@@ -6,7 +6,7 @@
 /*   By: ktanigaw </var/mail/ktanigaw>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 11:28:57 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/14 12:45:05 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/30 00:17:50 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	srclen;
 
 	srclen = ft_strlen(src);
+	if (NULL == dst && 0 == dstsize)
+		return (srclen);
 	if (dst == NULL || src == NULL)
 		return (0);
 	if (srclen + 1 < dstsize)
@@ -30,3 +32,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (srclen);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	printf("org:%zu\n",strlcpy("NULL","NULL",0));
+	printf("ft:%zu\n",ft_strlcpy("NULL","NULL",0));
+	return (0);
+}*/
