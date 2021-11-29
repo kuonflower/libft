@@ -6,7 +6,7 @@
 /*   By: ktanigaw <ktanigaw@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 02:37:58 by ktanigaw          #+#    #+#             */
-/*   Updated: 2021/11/26 13:19:48 by ktanigaw         ###   ########.fr       */
+/*   Updated: 2021/11/29 19:03:47 by ktanigaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dstlen;
 	size_t	srclen;
 
-	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
+	if (NULL == dst && 0 == dstsize)
+		return (srclen);
+	dstlen = ft_strlen(dst);
 	if (dstlen >= dstsize)
 		return (dstsize + srclen);
 	if (srclen < dstsize - dstlen)
@@ -32,3 +34,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (dstlen + srclen);
 }
+
+/*#include <string.h>
+#include <stdio.h>
+int main()
+{
+	printf("std:%zu\n", strlcat(NULL ,"aiu", 0 ));
+	printf("ft:%zu\n", ft_strlcat(NULL, "aiu",0 ));
+	return (0);
+}*/
